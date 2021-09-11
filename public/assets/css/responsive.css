@@ -367,6 +367,10 @@
 		height: 100%;
 	}
 
+	.nav-cart {
+		margin-right: 20px;
+	}
+
 	.nav-info.active > i {
 		transform: rotateX(-360deg) scale(0.7);
 	}
@@ -757,6 +761,11 @@
 
 /* === Mobile === */
 @media screen and (max-width: 575.98px) {
+	/* === HEADER === */
+	.nav-cart {
+		margin: 0 12px;
+	}
+
 	/* === WHY CHOOSE US === */
 	.section__chooseus .row {
 		justify-content: center;
@@ -928,11 +937,19 @@
 
 	/* === NAV BOX === */
 	.nav-search__button i,
-	.nav-cart__button i {
+	.nav-cart__button i,
+	.nav-info i {
 		font-size: 24px;
 	}
 
+	.nav-cart {
+		margin: 0 6px;
+	}
+
 	/* === SEARCH === */
+	.nav-search form {
+		width: calc(100% - 85px);
+	}
 	.nav-search__form input::placeholder {
 		font-size: 14px;
 		letter-spacing: 1px;
