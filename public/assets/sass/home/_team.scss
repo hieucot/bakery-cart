@@ -1,0 +1,179 @@
+/* === OUR TEAM === */
+.team {
+	&__cards {
+		margin-left: calc(-1 * #{$spacing});
+		display: flex;
+		flex-wrap: wrap;
+	}
+	&__card {
+		width: calc((100% / #{$column-3}) - #{$spacing});
+		margin-left: $spacing;
+		display: flex;
+		flex-direction: column;
+
+		&:hover {
+			.team__img img {
+				transform: scale(1.05);
+			}
+			.team__arrow {
+				transform: rotate(0);
+			}
+			.team__content {
+				transform: translateY(20px);
+			}
+		}
+	}
+
+	&__thumbnail {
+		flex-shrink: 0;
+		margin: 0 auto;
+		position: relative;
+	}
+	&__img {
+		width: 277px;
+		height: 277px;
+		border-radius: 100rem;
+		border: 14px solid $white-color;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			transition: 0.3s ease-in-out;
+			transform-origin: 50% 100%;
+			will-change: transform;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		content: "";
+		top: -6px;
+		left: -6px;
+		right: -6px;
+		bottom: -6px;
+		transform: rotate(36deg);
+		transition: 0.3s ease-in-out;
+		pointer-events: none;
+
+		&::after {
+			position: absolute;
+			content: "";
+			top: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			border-style: solid;
+			border-width: 28px 14px;
+			border-color: $white-color transparent transparent transparent;
+		}
+	}
+
+	&__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		transition: 0.3s ease-in-out;
+	}
+	&__top {
+		display: flex;
+		flex-direction: column;
+		padding: 16px 40px 24px 40px;
+	}
+	&__title {
+		font-size: 24px;
+		text-transform: uppercase;
+		color: $black-color;
+		letter-spacing: 2px;
+		font-weight: 600;
+	}
+	&__descriptions {
+		color: $gray-color;
+	}
+
+	&__bottom {
+		flex-shrink: 0;
+		margin-top: auto;
+	}
+	&__social {
+		font-size: 28px;
+		padding: 0 6px;
+		color: $black-color;
+	}
+
+	@include maxw(1199.98px) {
+		&__img {
+			width: 250px;
+			height: 250px;
+
+			img {
+				transform: scale(1.05);
+			}
+		}
+
+		&__arrow {
+			transform: none;
+		}
+		&__title {
+			font-size: 22px;
+			letter-spacing: 1px;
+		}
+		&__card:hover &__content {
+			transform: none;
+		}
+		&__content {
+			padding-top: 40px;
+		}
+		&__top {
+			padding: 0;
+		}
+		&__descriptions {
+			padding-top: 12px;
+		}
+		&__bottom {
+			padding-top: 12px;
+		}
+	}
+
+	@include maxw(991.98px) {
+		&__cards {
+			$spacing: 20px;
+			flex-wrap: nowrap;
+			scroll-snap-type: x mandatory;
+			overflow-x: auto;
+			padding-bottom: $spacing;
+		}
+		&__card {
+			$column-3: 2;
+			$spacing: 20px;
+
+			width: calc((90% / #{$column-3}) - #{$spacing});
+			margin-left: $spacing;
+			scroll-snap-align: end;
+			scroll-snap-stop: always;
+			flex-shrink: 0;
+		}
+		&__img {
+			width: 170px;
+			height: 170px;
+		}
+	}
+	@include maxw(767.98px) {
+		&__title {
+			font-size: 16px;
+		}
+	}
+	@include maxw(479.98px) {
+		&__card {
+			$column-3: 1;
+			width: calc((100% / #{$column-3}) - #{$spacing});
+		}
+		&__social {
+			font-size: 22px;
+		}
+		&__title {
+			font-size: 14px;
+		}
+	}
+}

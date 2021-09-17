@@ -1,0 +1,97 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+	-moz-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 14px;
+	line-height: 1.4;
+	font-family: $font-poppins;
+	color: $gray-color;
+	background-color: $white-color;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+::selection {
+	color: $white-color;
+	background: $primary-color;
+}
+input,
+textarea,
+select,
+button {
+	outline: none;
+}
+
+input {
+	line-height: normal;
+	&::-webkit-outer-spin-button,
+	&::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	&[type="number"] {
+		-moz-appearance: textfield;
+	}
+}
+
+button {
+	cursor: pointer;
+	transition: 0.2s ease-in-out;
+	&:active {
+		-webkit-transform: scale3d(0.8, 0.8, 0.9);
+	}
+}
+label {
+	transition: 0.2s ease-in-out;
+}
+
+a {
+	display: inline-block;
+	text-decoration: none;
+	color: unset;
+	transition: 0.2s ease-in-out;
+	&:hover {
+		color: $primary-color;
+	}
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+li {
+	list-style: none;
+}
+blockquote {
+	position: relative;
+	padding-left: $quote-padding;
+	font-size: 18px;
+	line-height: 1.6;
+	letter-spacing: 1px;
+
+	&::before {
+		content: "“";
+		position: absolute;
+		top: 0;
+		left: 0;
+		line-height: 1.2;
+		height: 100%;
+		font-size: 100px;
+		font-family: $font-great;
+		color: $primary-color;
+	}
+}

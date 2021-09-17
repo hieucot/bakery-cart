@@ -1,0 +1,115 @@
+/* === HERO ==== */
+.section__hero {
+	background: url(../images/bg-hero.jpg) no-repeat center / cover;
+	position: relative;
+
+	@include maxw(767.98px) {
+		& .grid.wide {
+			max-width: 100%;
+		}
+	}
+	@include maxw(479.98px) {
+		&::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+			background: $white-color;
+			opacity: 0.7;
+		}
+	}
+}
+
+.hero {
+	&__content {
+		position: relative;
+	}
+	&__title {
+		font-family: $font-great;
+		font-size: 100px;
+		font-weight: 300;
+		color: $primary-color;
+		line-height: 1;
+	}
+	&__phrase {
+		color: $black-color;
+		text-transform: uppercase;
+		letter-spacing: 10px;
+		font-size: 36px;
+		position: relative;
+		padding-left: 85px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			height: 3px;
+			width: 60px;
+			background: $black-color;
+		}
+	}
+	&__sentence {
+		font-size: 24px;
+		color: $gray-color;
+		margin: 30px 0;
+		font-weight: 400;
+		width: clamp(30ch, 50%, 75ch);
+		letter-spacing: 2px;
+	}
+
+	@include maxw(991.98px) {
+		&__title {
+			font-size: 70px;
+			line-height: unset;
+		}
+		&__phrase {
+			font-size: 26px;
+			letter-spacing: 3px;
+			padding: 0;
+
+			&::before {
+				display: none;
+			}
+		}
+
+		&__sentence {
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
+	}
+	@include maxw(767.98px) {
+		&__title {
+			font-size: 50px;
+		}
+		&__phrase {
+			font-size: 22px;
+		}
+		&__sentence {
+			font-size: 18px;
+		}
+	}
+	@include maxw(479.98px) {
+		.section__hero {
+			position: relative;
+			&::before {
+				content: "";
+				position: absolute;
+				top: 0;
+				right: 0;
+				left: 0;
+				bottom: 0;
+				background: v$white-color;
+				opacity: 0.7;
+			}
+		}
+	}
+	@include maxw(399.98px) {
+		&__sentence {
+			width: unset;
+		}
+	}
+}

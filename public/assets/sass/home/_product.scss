@@ -1,0 +1,231 @@
+/* === PRODUCT HOME === */
+
+.product {
+	&__products {
+		display: flex;
+		flex-wrap: wrap;
+		margin-left: calc(-1 * #{$spacing});
+	}
+	&__item {
+		display: flex;
+		flex-direction: column;
+		width: calc(calc(100% / #{$column-4}) - #{$spacing});
+		margin-left: $spacing;
+		margin-bottom: 50px;
+		position: relative;
+		padding: 20px 20px 40px;
+		border-radius: 6px;
+		background: $white-color;
+		box-shadow: $box-shadow-item;
+		transition: 0.25s ease-in-out;
+
+		&:hover {
+			transform: translateY(-20px);
+
+			& .product__bottom {
+				visibility: visible;
+				top: calc(100% - 20px);
+				bottom: -60px;
+			}
+			& .product__button {
+				opacity: 1;
+				visibility: visible;
+				transform: scale(1) translateY(0);
+
+				&:first-child {
+					transition-delay: 0.1s;
+				}
+				&:last-child {
+					transition-delay: 0.2s;
+				}
+			}
+		}
+	}
+	&__picture {
+		min-height: 200px;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+	}
+	&__img {
+		width: auto;
+		height: auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+	&__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+	}
+	&__top {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+		text-align: center;
+		margin-top: 20px;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+	&__title {
+		font-size: 18px;
+		font-weight: 500;
+		text-transform: uppercase;
+		color: $black-color;
+
+		a {
+			display: -webkit-box;
+			word-wrap: break-word;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 2;
+			overflow: hidden;
+		}
+	}
+	&__descriptions {
+		flex-shrink: 0;
+		margin-top: auto;
+		margin: 6px 0;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 2;
+		overflow: hidden;
+	}
+	&__pricing-wrap {
+		flex-shrink: 0;
+		margin-top: auto;
+	}
+	&__pricing--disable {
+		display: none;
+	}
+	&__pricing {
+		font-weight: 600;
+		font-size: 16px;
+		color: $primary-color;
+
+		&--old {
+			color: $gray-color;
+			text-decoration: line-through;
+			margin-right: 12px;
+			font-weight: 400;
+			font-size: 14px;
+		}
+	}
+	&__bottom {
+		flex-shrink: 0;
+		margin-top: auto;
+		display: flex;
+		justify-content: center;
+
+		visibility: hidden;
+		position: absolute;
+		top: 100%;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: $white-color;
+		border-radius: 0 0 6px 6px;
+		transition: 0.25s ease-in-out;
+		box-shadow: $box-shadow-light;
+	}
+	&__button {
+		opacity: 0;
+		visibility: hidden;
+		transform: scale(0.1) translateY(-20px);
+		transition: 0.25s ease-in-out;
+		&:first-child {
+			margin-right: 12px;
+		}
+	}
+	&__button--all {
+		text-align: center;
+	}
+
+	@include maxw(1199.98px) {
+		&__products {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			scroll-snap-type: x mandatory;
+			margin-left: 0;
+			margin-bottom: 12px;
+			padding-bottom: $spacing;
+		}
+		&__item {
+			$spacing: 20px;
+			$column-4: 3;
+			$box-shadow-item: rgba(149, 157, 165, 0.6) 0px 6px 10px;
+
+			width: calc(calc(95% / #{$column-4}) - #{$spacing});
+			flex-shrink: 0;
+			scroll-snap-align: start;
+			padding: 15px 15px 30px;
+			margin-left: $spacing;
+			box-shadow: $box-shadow-item;
+
+			&:hover {
+				transform: none;
+			}
+		}
+		&__bottom {
+			position: static;
+			margin-top: 15px;
+			box-shadow: none;
+		}
+
+		&__button {
+			transform: none;
+			opacity: 1;
+			visibility: visible;
+
+			a,
+			button {
+				width: 50px;
+				height: 50px;
+			}
+		}
+	}
+	@include maxw(991.98px) {
+		&__item {
+			$column-4: 2;
+			$spacing: 20px;
+
+			width: calc(calc(95% / #{$column-4}) - #{$spacing});
+		}
+	}
+
+	@include maxw(767.98px) {
+		&__item {
+			padding: 10px 10px 30px;
+		}
+		&__title {
+			font-size: 14px;
+		}
+		&__pricing--old {
+			font-family: $font-lato;
+			margin-right: 10px;
+		}
+	}
+	@include maxw(479.98px) {
+		&__item {
+			$column-4: 1;
+			$spacing: 20px;
+
+			width: calc(calc(70% / #{$column-4}) - #{$spacing});
+		}
+	}
+	@include maxw(399.98px) {
+		&__item {
+			$column-4: 1;
+			$spacing: 20px;
+
+			width: calc(calc(90% / #{$column-4}) - #{$spacing});
+		}
+	}
+}

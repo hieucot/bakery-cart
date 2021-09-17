@@ -1,0 +1,55 @@
+/* === PARTNER === */
+.section__partner {
+	background: url(../images/bg-partner.jpg) no-repeat center / cover;
+}
+
+.partner {
+	&__list {
+		display: flex;
+		margin-left: calc(-1 * #{$spacing});
+	}
+	&__item {
+		width: calc((100% / #{$column-5}) - #{$spacing});
+		margin-left: $spacing;
+		text-align: center;
+	}
+	&__img {
+		width: 110px;
+		height: 100%;
+		margin: 0 auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+			transition: 0.2s ease-in-out;
+		}
+	}
+
+	@include maxw(991.98px) {
+		&__img {
+			width: 90px;
+		}
+	}
+	@include maxw(767.98px) {
+		&__list {
+			scroll-snap-type: x mandatory;
+			overflow-x: auto;
+		}
+		&__item {
+			$column-5: 3;
+			$spacing: 20px;
+
+			width: calc((90% / #{$column-5}) - #{$spacing});
+			margin-left: $spacing;
+			scroll-snap-align: start;
+			scroll-snap-stop: always;
+			flex-shrink: 0;
+		}
+	}
+	@include maxw(479.98px) {
+		&__img {
+			width: 60px;
+		}
+	}
+}

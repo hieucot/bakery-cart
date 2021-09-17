@@ -1,0 +1,164 @@
+/* ===  WHY CHOOSE US === */
+.section__chooseus {
+	.row {
+		margin-top: 100px;
+		align-items: center;
+	}
+	@include maxw(1199.98px) {
+		& .grid.wide {
+			max-width: 100%;
+		}
+	}
+	@include maxw(991.98px) {
+		& .row {
+			margin-top: 40px;
+		}
+	}
+	@include maxw(767.98px) {
+		& .grid.wide {
+			max-width: 540px;
+		}
+	}
+	@include maxw(575.98px) {
+		& .row {
+			justify-content: center;
+		}
+	}
+	@include maxw(479.98px) {
+		& .grid.wide {
+			max-width: 100%;
+		}
+	}
+}
+.chooseus {
+	&:not(:last-child) {
+		margin-bottom: 50px;
+		padding-bottom: 50px;
+		border-bottom: 1px solid $border-gray-color;
+	}
+
+	&:hover {
+		.chooseus__svg-right {
+			transform: translate(-50%, -50%) rotateY(180deg) rotateZ(45deg);
+		}
+		.chooseus__svg-left {
+			transform: translate(-50%, -50%) rotateY(0) rotateZ(45deg);
+		}
+	}
+
+	&__left {
+		text-align: right;
+	}
+	&__right {
+		text-align: left;
+	}
+	&__wrap {
+		display: flex;
+	}
+	&__content {
+		flex: 1;
+		display: flex;
+		flex-direction: column;
+		padding: 0 20px 0 20px;
+	}
+	&__title {
+		font-size: 24px;
+		color: $black-color;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-weight: 600;
+		flex-grow: 1;
+	}
+	&__descriptions {
+		margin-top: 14px;
+		min-height: 100px;
+		overflow: hidden;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 4;
+		word-break: break-word;
+		color: $gray-color;
+	}
+	&__icons {
+		flex-shrink: 0;
+		position: relative;
+		height: 100%;
+		i {
+			font-size: 60px;
+			color: $primary-color;
+		}
+	}
+	&__svg {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: auto;
+		z-index: -1;
+		transition: 0.25s ease;
+
+		&-right {
+			transform: translate(-50%, -50%) rotateY(180deg);
+		}
+		&-left {
+			transform: translate(-50%, -50%) rotateY(0);
+		}
+		path {
+			fill: $bg-light-color;
+		}
+	}
+	&__img {
+		width: auto;
+		height: auto;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	@include maxw(991.98px) {
+		&__left &__wrap {
+			flex-direction: column-reverse;
+		}
+		&__right &__wrap {
+			flex-direction: column;
+		}
+		&__wrap {
+			text-align: center;
+		}
+		&__icons {
+			text-align: center;
+			margin-bottom: 24px;
+		}
+		&__title {
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
+	}
+	@include maxw(767.98px) {
+		&:not(:last-child) {
+			padding: 0;
+			border: none;
+			margin-bottom: 0;
+		}
+		&__content {
+			padding: 0;
+		}
+		&__title {
+			font-size: 16px;
+		}
+		&:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+
+	@include maxw(399.98px) {
+		&__icons i {
+			font-size: 50px;
+		}
+		&__svg {
+			width: 60px;
+		}
+	}
+}

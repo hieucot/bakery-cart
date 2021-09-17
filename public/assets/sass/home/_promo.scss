@@ -1,0 +1,60 @@
+/* === PROMO === */
+.promo {
+	&__content {
+		background: url(../images/promo.jpg) no-repeat top / cover;
+		padding: 75px 30px 80px;
+		border: 10px solid #f3f7f8;
+		text-align: center;
+		background-size: auto;
+		height: 490px;
+		transform: translateY(-50px);
+	}
+	&__title {
+		font-family: $font-great;
+		color: $primary-color;
+		font-size: 32px;
+		letter-spacing: 2px;
+	}
+	&__paragraph {
+		width: clamp(45ch, 50%, 75ch);
+		margin: 20px auto;
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	@include maxw(991.98px) {
+		.section__promo {
+			padding: 50px 0;
+		}
+		&__content {
+			transform: none;
+		}
+	}
+	@include maxw(767.98px) {
+		&__content {
+			height: auto;
+			padding: 15px 30px 90px;
+			background-size: cover;
+		}
+		&__title {
+			font-size: 28px;
+		}
+		&__paragraph {
+			font-size: 16px;
+			width: unset;
+		}
+	}
+	@include maxw(479.98px) {
+		&_content {
+			padding: 15px 15px 95px;
+		}
+		&_paragraph {
+			font-size: 14px;
+		}
+	}
+	@include maxw(399.98px) {
+		&__content {
+			padding: 15px 5px 120px;
+		}
+	}
+}

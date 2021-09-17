@@ -10,11 +10,11 @@ class Products extends Component {
                 <div className="grid wide">
                     <h2 className="section--title">New Products</h2>
 
-                    <div className="products">
+                    <div className="product__products">
                         {this.props.children}
                     </div>
 
-                    <div className="products__button">
+                    <div className="product__button--all">
                         <a href="# " className="btn btn--lg btn--shadow btn--primary btn--zakaria">View All</a>
                     </div>
                 </div>

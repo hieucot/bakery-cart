@@ -1,0 +1,59 @@
+/* === CTA === */
+.section__cta {
+	background: url(../images/bg-cta.jpg) no-repeat center / auto;
+
+	.row {
+		justify-content: center;
+	}
+
+	@include maxw(1199.98px) {
+		& {
+			background-position: center center;
+			background-size: cover;
+		}
+	}
+}
+.cta {
+	&__content {
+		text-align: center;
+		position: relative;
+	}
+	&__sologan {
+		font-family: $font-great;
+		font-size: 36px;
+		font-weight: 300;
+		color: $primary-color;
+		letter-spacing: 3px;
+	}
+	&__title {
+		font-size: 55px;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 5px;
+		margin: 12px 0 28px;
+		color: $black-color;
+	}
+	@include maxw(1199.98px) {
+		&__sologan {
+			font-size: 30px;
+		}
+	}
+	@include maxw(767.98px) {
+		&__sologan {
+			font-size: 22px;
+		}
+		&__title {
+			letter-spacing: 1px;
+		}
+	}
+	@include maxw(479.98px) {
+		&__sologan {
+			letter-spacing: 1px;
+		}
+	}
+	@include maxw(399.98px) {
+		&__sologan {
+			font-size: 18px;
+		}
+	}
+}

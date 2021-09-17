@@ -1,0 +1,93 @@
+/* === SALE === */
+.section__sale {
+	background: url(../images/parallax-bg.jpg) no-repeat center / cover;
+	background-attachment: fixed;
+	position: relative;
+	@include maxw(1199.98px) {
+		&::before {
+			pointer-events: none;
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background: $white-color;
+			opacity: 0.7;
+		}
+	}
+	@include maxw(991.98px) {
+		& {
+			background-attachment: unset;
+		}
+	}
+	@include maxw(767.98px) {
+		& {
+			background-attachment: fixed;
+			scroll-behavior: smooth;
+		}
+	}
+	@include maxw(479.98px) {
+		& .grid.wide {
+			max-width: 100%;
+		}
+	}
+}
+.sale {
+	&__title {
+		font-size: 55px;
+		color: $black-color;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 2px;
+	}
+	&__discount {
+		margin-top: 12px;
+	}
+	&__percent {
+		font-family: $font-great;
+		font-size: 48px;
+		font-weight: 300;
+		color: $primary-color;
+		margin-right: 24px;
+	}
+	&__type {
+		color: $black-color;
+		text-transform: uppercase;
+		font-weight: 600;
+		letter-spacing: 2px;
+		font-size: 24px;
+	}
+	&__descriptions {
+		margin-top: 12px;
+		color: $gray-color;
+	}
+
+	&__content {
+		position: relative;
+		a {
+			margin-top: 24px;
+		}
+	}
+
+	@include maxw(767.98px) {
+		&__content {
+			position: relative;
+			text-align: center;
+		}
+		&__percent {
+			margin-right: 16px;
+		}
+	}
+	@include maxw(479.98px) {
+		&__type {
+			font-size: 22px;
+			letter-spacing: 0;
+		}
+	}
+	@include maxw(399.98px) {
+		&__percent {
+			font-size: 35px;
+		}
+	}
+}
